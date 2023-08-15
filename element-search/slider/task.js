@@ -3,11 +3,7 @@ const prevButton = document.querySelector('.slider__arrow_prev');
 const nextButton = document.querySelector('.slider__arrow_next');
 
 function getActiveSlide() {
-    for (let i = 0; i < slides.length; i++) {
-        if (slides[i].classList.contains('slider__item_active')) {
-            return i;
-        }
-    }
+    return Array.from(slides).findIndex(slide => slide.classList.contains('slider__item_active'));
 }
 
 prevButton.onclick = function() {
